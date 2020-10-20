@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-  Dashboard
+  {% include 'parciais/_messages.html' %}
+  <h1 class="mt-3 mb-3">Olá {{ user.first_name }} {{ user.last_name }}</h1>
+  <p>
+    O seu nome de usuário é {{ user }}.
+  </p>
+  <a href="/accounts/logout">Sair</a>
 {% endblock %}

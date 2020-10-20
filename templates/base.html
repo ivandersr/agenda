@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-lg-12">
         <br><br>
-        {% if 'contas' not in request.path%}
+        {% if 'accounts' not in request.path%}
           <form method="get" action="{% url 'busca' %}">
             <div class="form-group row">
               <div class="col-12">
@@ -29,7 +29,6 @@
             </div>
           </form>
         {% endif %}
-        {% include 'parciais/_messages.html' %}
         {% block conteudo %}{% endblock %}
       </div>
     </div>
