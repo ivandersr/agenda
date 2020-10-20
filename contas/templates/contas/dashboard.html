@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block 'titulo' %}Dashboard de {{user.first_name}} | {% endblock %}
 
 {% block conteudo %}
   {% include 'parciais/_messages.html' %}
@@ -7,4 +8,17 @@
     O seu nome de usuário é {{ user }}.
   </p>
   <a href="/accounts/logout">Sair</a>
+  <br /><br />
+  <div class="container">
+    <form action="{% url 'dashboard' %}" method="POST" enctype="multipart/form-data">
+      <table class="table">
+        {{ form }}
+        <tr>
+          <td colspan="2">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
 {% endblock %}
